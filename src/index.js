@@ -37,13 +37,13 @@ class Board extends React.Component {
 
     handleClick(i) {
         const squares = this.state.squares.slice();
-        
-        if (this.checksquares(squares) && !calculateWinner(squares)) {
+
+        /* if (this.checksquares(squares) && !calculateWinner(squares)) {
             this.setState({
                 squares: Array(9).fill(null),
                 xIsNext: true
             });
-        }
+        } */
 
         if (calculateWinner(squares) || squares[i]) {
             return;
@@ -56,11 +56,11 @@ class Board extends React.Component {
         });
     }
 
-    checksquares(squares) {
+    /* checksquares(squares) {
         return squares.every(element => {
             return element != null;
         });
-    }
+    } */
 
     render() {
         const winner = calculateWinner(this.state.squares);
